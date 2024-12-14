@@ -4,9 +4,11 @@ import pygame
 # from markupsafe import escape
 from time import sleep
 
+path_to_app = '/home/pi/wantAlarm/'
+
 def alarm():
     # start the music
-    file = 'changes.mp3'
+    file = path_to_app + 'changes.mp3'
     pygame.init()
     pygame.mixer.init()
     pygame.mixer.music.load(file)
