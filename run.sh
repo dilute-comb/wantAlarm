@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-source .venv/bin/activate
-python3 main.py
+source /home/pi/wantAlarm/.venv/bin/activate
+python3 /home/pi/wantAlarm/main.py
