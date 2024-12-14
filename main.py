@@ -1,11 +1,28 @@
 import pygame
-import time
+from flask import *
+from werkzeug.utils import secure_filename
+from markupsafe import escape
 
-file = 'changes.mp3'
-pygame.init()
-pygame.mixer.init()
-pygame.mixer.music.load(file)
-pygame.mixer.music.play()
+def alarm():
+    # start the music
+    file = 'changes.mp3'
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load(file)
+    pygame.mixer.music.play()
 
-time.sleep(10)
-pygame.mixer.music.pause()
+app = Flask(__name__)
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        file = request.files['the_file']
+        file.save(f"{secure_filename(file.filename)}")
+
+@app.route("/<name>")
+def hello(name):
+    return f"Hello, {escape(name)}!"
+
+
+
+
