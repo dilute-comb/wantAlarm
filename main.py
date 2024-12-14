@@ -1,7 +1,7 @@
 import pygame
-from flask import *
-from werkzeug.utils import secure_filename
-from markupsafe import escape
+# from flask import *
+# from werkzeug.utils import secure_filename
+# from markupsafe import escape
 from time import sleep
 
 def alarm():
